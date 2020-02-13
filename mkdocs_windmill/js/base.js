@@ -340,14 +340,8 @@ if (!mainWindow) {
   if (topUrl) {
     window.location.href = topUrl;
   }
-
 } else {
-  // Adjust all links to point to the top page with the right hash fragment.
-  $(document).ready(function() {
-    $('a').each(function() { adjustLink(this); });
-  });
-
-  // For any dynamically-created links, adjust them on click.
+  // Adjust links on click.
   $(document).on('click', 'a:not([data-wm-adjusted])', function(e) { adjustLink(this); });
 }
 
